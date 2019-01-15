@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@model Login
+<div class="limiter">
+    <div class="container-login100" style="background-image: url('');">
+        <div class="wrap-login100">
+            <span class="login100-form-title p-b-34 p-t-27">
+                <img src="img/favicon-dashboard-globe.png" />
+            </span>
+
+            @using (Html.BeginForm(actionName: "Login", controllerName: "Home", method: FormMethod.Post, htmlAttributes: new { @class = "form-horizontal" }))
+            {
+                <div class="wrap-input100 validate-input" data-validate="Enter username">
+                    @Html.TextBoxFor(model => model.identifiant, new { @class = "input100" })
+                    <span class="focus-input100" data-placeholder="&#xf207;"></span>
+                    @Html.ValidationMessageFor(model => model.identifiant, "", htmlAttributes: new { @class = "text-danger" })
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate="Enter password">
+                    @Html.PasswordFor(model => model.password, new { @class = "input100" })
+                    <span class="focus-input100" data-placeholder="&#xf191;"></span>
+                    @Html.ValidationMessageFor(model => model.password, "", htmlAttributes: new { @class = "text-danger" })
+                </div>
+
+                <div class="container-login100-form-btn">
+                    <input type="submit" class="login100-form-btn" value="login" />
+                </div>
+            }
+            <div class="text-center p-t-90">
+                <a class="txt1" href="#">
+                    Forgot Password?
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
