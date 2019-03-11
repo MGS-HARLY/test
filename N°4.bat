@@ -38,9 +38,9 @@ if "%Resp%" == "oui" (goto script0) else (goto script1)
 
 
 :script0
-git add *
+git add .
 git commit -m "remove"
-git reset --hard mdr5_commit
+git reset --hard 
 git push --force
 echo .
 echo .
